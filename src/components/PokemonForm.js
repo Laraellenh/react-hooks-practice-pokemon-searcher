@@ -23,8 +23,8 @@ function PokemonForm({ handleAddPoke}) {
     )
   }
 
-  function handleSubmit(e) {
-    e.preventDefault()
+  function handleSubmit() {
+    
     console.log("are you a thing?")
     const newPoke = {
       name: form.name,
@@ -51,7 +51,7 @@ function PokemonForm({ handleAddPoke}) {
   return (
     <div>
       <h3>Add a Pokemon!</h3>
-      <Form onSubmit={handleSubmit}/>
+      <Form onSubmit={handleSubmit} >
         <Form.Group widths="equal">
           <Form.Input fluid label="Name" placeholder="Name" name="name" value={form.name} onChange={handleChange} />
           <Form.Input fluid label="hp" placeholder="hp" name="hp" value={form.hp}  onChange={handleChange}  />
@@ -76,7 +76,7 @@ function PokemonForm({ handleAddPoke}) {
 
         </Form.Group>
         <Form.Button >Submit</Form.Button>
-
+      </Form>
       
     </div> 
   )
